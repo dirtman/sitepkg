@@ -13,7 +13,7 @@ import (
 )
 
 var DefaultPrint io.Writer = os.Stdout
-var DefaultShow io.Writer = os.Stderr
+var DefaultShow io.Writer = os.Stdout
 var DefaultErr io.Writer = os.Stderr
 
 func Print(format string, a ...interface{}) {

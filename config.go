@@ -352,7 +352,7 @@ func ReadConfigFile(config_file string) error {
 		if line == "" {
 			continue
 		}
-		// Shave off a trailing comment (must be separated from option value by at least on space):
+		// Shave off a trailing comment (must be separated from option value by at least one space):
 		comment := regexp.MustCompile("[ \t]+#.*$")
 		slice := comment.Split(line, 2)
 		line = slice[0]
