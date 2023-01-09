@@ -15,6 +15,7 @@ import (
 var DefaultPrint io.Writer = os.Stdout
 var DefaultShow io.Writer = os.Stdout
 var DefaultErr io.Writer = os.Stderr
+var DefaultDebug io.Writer = os.Stderr
 
 func Print(format string, a ...interface{}) {
 	fmt.Fprintf(DefaultPrint, format, a...)
@@ -54,7 +55,7 @@ func Fwarn(w io.Writer, format string, a ...interface{}) {
 
 func ShowDebug(format string, a ...interface{}) {
 	if Debug {
-		fmt.Fprintf(DefaultShow, "DEBUG: "+format+"\n", a...)
+		fmt.Fprintf(DefaultDebug, "DEBUG: "+format+"\n", a...)
 	}
 }
 
