@@ -32,7 +32,7 @@ func PackageInit(pkg_name string, pkg_version string) error {
 	SetBoolOpt("Quiet", "q", true, false, "Quiet mode")
 	SetBoolOpt("Quieter", "", true, false, "Quieter mode")
 	SetBoolOpt("ShowConfig", "", false, false, "Show configuration settings and value, and exit.")
-	SetBoolOpt("noPage", "", true, false, "Disable paging (via ENV(PAGER)) when showing usage (-h)")
+	SetBoolOpt("Page", "", true, true, "Enable paging when showing usage (-h)")
 	SetStringOpt("Pager", "", true, "", "Specify a pager command for paging usage information")
 	//SetStringOpt ("MailList", "m", true, "", "Specify an email address to which to email any output.")
 	//SetStringOpt ("LogFile", "", true, "", "Specify a log file to which to write any output.")

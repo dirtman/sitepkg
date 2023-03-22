@@ -166,10 +166,10 @@ func ShowPod() error {
 		return Error("No POD text or POD file found")
 	}
 
-	nopage_opt, err := GetBoolOpt("noPage")
+	page_opt, err := GetBoolOpt("Page")
 	var pager string
 
-	if !nopage_opt {
+	if page_opt {
 		pager, err = GetStringOpt("Pager")
 		if err != nil {
 			Warn("Failure getting pager: %v", err)
@@ -182,7 +182,7 @@ func ShowPod() error {
 	if pager != "" {
 		pager, err = ExecPath(pager)
 	}
-	if nopage_opt || pager == "" {
+	if pager == "" || ! page_opt {
 		if podPath == "" {
 			Print("%s", podText)
 			return nil
