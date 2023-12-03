@@ -14,7 +14,10 @@ import (
   Exit the program.  Improve upon later.
 \*****************************************************************************/
 
-func Exit(code int) {
+func Exit(code int, errs ...error) {
+	for _, err := range errs {
+		Warn("%v", err)
+	}
 	os.Exit(code)
 }
 
@@ -254,7 +257,5 @@ func StringToBool(s string) (match bool, err error) {
 	} else if !match {
 		return false, Error("unsupported string \"%s\" for boolean value")
 	}
-	return ! match, nil
+	return !match, nil
 }
-
-
